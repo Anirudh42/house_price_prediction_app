@@ -17,8 +17,8 @@ app = Flask(__name__)
 @app.route("/",methods=['GET','POST'])
 def welcome():
     if request.method=='POST':
-        user = request.form["name"]
-        return redirect(url_for("predict",usr=user))
+        #Get the username from form
+        return #Change or redirect your URL to /predict
     else:
         return render_template("index.html")
 
@@ -26,12 +26,9 @@ def welcome():
 def predict(usr):
     user = usr
     if request.method=='POST':
-        lot_area = request.form.get("lot_area")
-        bldg_type = request.form.get("bldg_type")
-        roof_mat = request.form.get("roof_mat")
-        bsmt = request.form.get("bsmt")
-        df = process_data([[lot_area,bldg_type,roof_mat,bsmt]])
-        price = model.predict(df)
+        #Fetch all data from HTML form
+        #Process data
+        #Use mode to predict
         return render_template("predict.html",content=user,prediction="House Price = $ " + str(round(price[0],2)))
     else:
         return render_template("predict.html",content=user)

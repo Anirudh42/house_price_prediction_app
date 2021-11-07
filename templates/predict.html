@@ -8,13 +8,13 @@
 </head>
 <body>
     <form action="{{ url_for('predict',usr=content) }}"method="post">
-        {% block content %}<h2>Hello {{content}}!</h2>{% endblock %}
+        {% block content %}<h2>Hello <!-- Enter user name passed as variable here --></h2>{% endblock %}
         Please enter your "Dream Home" details
         <p><strong>Lot Area in Sq Ft</strong> <input type="text" name="lot_area" /></p>
         <p><strong>Building Type</strong> <input type="text" name="bldg_type" /></p>
         <p><strong>Roof Material</strong> <input type="text" name="roof_mat" /></p>
         <p><strong>Total Basement Sq Ft</strong> <input type="text" name="bsmt" /></p>
         <p><input type="submit" value="submit" /></p>
-        <h1>{{prediction}}</h1>
+        <h1><!-- Prediction value here --></h1>
 </body>
 </html>
