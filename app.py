@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+from sklearn.linear_model import LinearRegression
 import pandas as pd
 import pickle
 
@@ -37,4 +38,4 @@ def predict(usr):
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=5000)
